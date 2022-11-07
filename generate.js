@@ -1,13 +1,15 @@
 import {Configuration, OpenAIApi} from 'openai';
 import {writeFileSync} from 'fs';
+import {config} from 'dotenv';
+config();
 
 const configuration = new Configuration({
-  apiKey: 'your api key'
+  apiKey: process.env.APIKEY
 });
 
 const openai = new OpenAIApi(configuration);
 
-const prompt = 'a monkey riding bike on mars at beautiful evening' // WRITE YOUR PROMPT
+const prompt = 'a monkey riding bike on mars at open star night' // WRITE YOUR PROMPT
 
 const response = await openai.createImage({
   prompt,
