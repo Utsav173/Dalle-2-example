@@ -2,12 +2,12 @@ import {Configuration, OpenAIApi} from 'openai';
 import {writeFileSync} from 'fs';
 
 const configuration = new Configuration({
-  apiKey: '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'
+  apiKey: 'your api key'
 });
 
 const openai = new OpenAIApi(configuration);
 
-const prompt = 'a white siamese cat'
+const prompt = 'a monkey riding bike on mars at beautiful evening' // WRITE YOUR PROMPT
 
 const response = await openai.createImage({
   prompt,
